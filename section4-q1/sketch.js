@@ -1,7 +1,7 @@
 // テキスト「配列を使った描画」練習問題：折れ線グラフ
 
 function setup(){
-  createCanvas(400, 400);
+  createCanvas(500, 500);
   background(240);
 
   // 配列をランダムに初期化する
@@ -19,6 +19,11 @@ function setup(){
   const dx = width / scores.length;
   let px, py; // 線を引くために一つ前の点を覚えておく変数
   for(let i = 0; i < scores.length; i++){
+    const h = height * scores[i] / 100;
+    fill(0);
+    circle(i*dx, height - h, 10);
+    stroke(0);
+    line(i*dx, height-h, (i+1)*dx, height-height * scores[i+1] / 100);
     // BLANK[1]
   }
 }
